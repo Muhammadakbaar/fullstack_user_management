@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Mono;
+import com.example.backend.annotation.RateLimit;
 
 @RestController
 @RequestMapping("/api/users")
@@ -22,6 +23,7 @@ public class UserController {
     private final RoleRepository roleRepository;
 
     @GetMapping("/me")
+    @RateLimit("user")
     public Mono<ApiResponse<UserResponse>> getCurrentUser(@AuthenticationPrincipal UserPrincipal principal) {
         if (principal == null) {
             return Mono.error(new UnauthorizedException("Not authenticated"));

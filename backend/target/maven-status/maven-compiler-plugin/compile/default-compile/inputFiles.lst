@@ -6,9 +6,11 @@
 /home/akbar/Code/Try cursor/backend/src/main/java/com/example/backend/dto/LoginRequest.java
 /home/akbar/Code/Try cursor/backend/src/main/java/com/example/backend/security/AuthenticationEntryPoint.java
 /home/akbar/Code/Try cursor/backend/src/main/java/com/example/backend/dto/TokenRefreshRequest.java
+/home/akbar/Code/Try cursor/backend/src/main/java/com/example/backend/config/RateLimitConfig.java
 /home/akbar/Code/Try cursor/backend/src/main/java/com/example/backend/dto/AuthResponse.java
 /home/akbar/Code/Try cursor/backend/src/main/java/com/example/backend/service/AuthService.java
 /home/akbar/Code/Try cursor/backend/src/main/java/com/example/backend/dto/UserInfo.java
+/home/akbar/Code/Try cursor/backend/src/main/java/com/example/backend/annotation/RateLimit.java
 /home/akbar/Code/Try cursor/backend/src/main/java/com/example/backend/security/CustomUserDetailsService.java
 /home/akbar/Code/Try cursor/backend/src/main/java/com/example/backend/dto/UserResponse.java
 /home/akbar/Code/Try cursor/backend/src/main/java/com/example/backend/BackendApplication.java
@@ -20,6 +22,7 @@
 /home/akbar/Code/Try cursor/backend/src/main/java/com/example/backend/security/UserPrincipal.java
 /home/akbar/Code/Try cursor/backend/src/main/java/com/example/backend/exception/UnauthorizedException.java
 /home/akbar/Code/Try cursor/backend/src/main/java/com/example/backend/dto/TokenRefreshResponse.java
+/home/akbar/Code/Try cursor/backend/src/main/java/com/example/backend/aspect/RateLimitAspect.java
 /home/akbar/Code/Try cursor/backend/src/main/java/com/example/backend/exception/GlobalExceptionHandler.java
 /home/akbar/Code/Try cursor/backend/src/main/java/com/example/backend/security/JwtAuthenticationFilter.java
 /home/akbar/Code/Try cursor/backend/src/main/java/com/example/backend/repository/RefreshTokenRepository.java

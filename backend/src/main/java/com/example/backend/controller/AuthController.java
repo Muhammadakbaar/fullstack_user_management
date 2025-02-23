@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Mono;
+import com.example.backend.annotation.RateLimit;
 
 @RestController
 @RequestMapping("/api/auth")
@@ -22,6 +23,7 @@ public class AuthController {
     private final AuthService authService;
 
     @PostMapping("/register")
+    @RateLimit("auth")
     public Mono<ResponseEntity<AuthResponse>> register(@Valid @RequestBody RegisterRequest request) {
         return authService.register(request)
                 .map(ResponseEntity::ok)
@@ -33,6 +35,7 @@ public class AuthController {
     }
 
     @PostMapping("/login")
+    @RateLimit("auth")
     public Mono<ResponseEntity<AuthResponse>> login(@Valid @RequestBody LoginRequest request) {
         return authService.login(request)
                 .map(ResponseEntity::ok)
@@ -44,6 +47,7 @@ public class AuthController {
     }
 
     @PostMapping("/refresh")
+    @RateLimit("auth")
     public Mono<ResponseEntity<AuthResponse>> refreshToken(@Valid @RequestBody TokenRefreshRequest request) {
         return authService.refreshToken(request.getRefreshToken())
                 .map(ResponseEntity::ok)
