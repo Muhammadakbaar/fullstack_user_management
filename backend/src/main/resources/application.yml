@@ -1,0 +1,19 @@
+spring:
+  r2dbc:
+    url: r2dbc:postgresql://localhost:5432/auth_fullstack
+    username: akbar
+    password: 01111997
+  sql:
+    init:
+      mode: always
+      schema-locations: classpath:schema.sql
+      data-locations: classpath:data.sql
+
+jwt:
+  secret: 9a4f2c8d3b7a1e6f45c8a0b3f267d8b1d4e6f3c8a9d2b5f8e3a7c4d9f2e5b8a1c4d7f2b9e6a3d5b8e1f9c4a7d2b5e8f3c6a9d4b7f2e5a8c1b4d7f9e2a5c8b3f6d9a4c7b2e5f8d1a3c6b9e4f7d2a5c8b1f4e7d9a2c5b8f3e6a1d4c7b9f2e5a8d3b6c1f4e7a9d2b5c8f3e6a1
+  expiration: 900000 # 15 minutes
+  refresh-token:
+    expiration: 2592000000 # 30 days
+
+server:
+  port: 8080 
